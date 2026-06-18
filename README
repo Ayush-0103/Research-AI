@@ -1,68 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous Research Analyst</title>
-</head>
-<body>
+# Autonomous Research Analyst
 
-<h1>Autonomous Research Analyst</h1>
+## Overview
 
-<p>
-An AI-powered multi-agent research platform that autonomously conducts market research,
-validates information, generates executive-level reports, and exports professional PDF documents.
-The system combines planning, web search, fact verification, report writing, and document generation
-into a fully automated research workflow.
-</p>
+Autonomous Research Analyst is an AI-powered multi-agent research platform that automates the entire research lifecycle—from planning and information gathering to fact verification, report generation, and PDF export.
 
-<hr>
+The system simulates the workflow of professional consulting firms such as McKinsey, Gartner, Deloitte, BCG, and Bain by leveraging multiple specialized AI agents working together in a structured pipeline.
 
-<h2>Project Overview</h2>
+Instead of spending hours manually researching a topic, users simply provide a research query, and the platform automatically:
 
-<p>
-Autonomous Research Analyst is designed to simulate the workflow of a professional consulting firm
-such as McKinsey, Gartner, Deloitte, or BCG.
-</p>
+* Creates a structured research plan
+* Searches trusted web sources
+* Verifies and summarizes findings
+* Generates a professional analyst report
+* Exports the report as a downloadable PDF
 
-<p>
-Instead of manually researching a topic, users simply provide a research query and the platform:
-</p>
+---
 
-<ol>
-    <li>Creates a structured research plan</li>
-    <li>Searches trusted web sources</li>
-    <li>Validates and summarizes findings</li>
-    <li>Generates a professional analyst report</li>
-    <li>Exports the report as a PDF</li>
-</ol>
+# Key Features
 
-<p>
-The entire process is powered by multiple specialized AI agents working together in an autonomous workflow.
-</p>
+### Multi-Agent AI Architecture
 
-<hr>
+Specialized AI agents collaborate to perform different stages of the research process.
 
-<h2>Key Features</h2>
+### Automated Research Planning
 
-<ul>
-    <li>Multi-Agent AI Architecture</li>
-    <li>Automated Research Planning</li>
-    <li>Web Search Integration</li>
-    <li>Fact Verification and Confidence Scoring</li>
-    <li>Professional Business Report Generation</li>
-    <li>PDF Export with Structured Formatting</li>
-    <li>Interactive Streamlit Dashboard</li>
-    <li>Real-Time Agent Status Tracking</li>
-    <li>Research Pipeline Visualization</li>
-    <li>Downloadable Executive Reports</li>
-</ul>
+Generates a structured research roadmap based on the user topic.
 
-<hr>
+### Web Search Integration
 
-<h2>System Architecture</h2>
+Collects information from multiple online sources using Tavily Search.
 
-<pre>
+### Fact Verification
+
+Filters weak claims, validates findings, and assigns confidence levels.
+
+### Professional Report Generation
+
+Produces executive-level business reports using consulting-style frameworks.
+
+### PDF Export
+
+Creates professionally formatted PDF reports with cover pages, sections, and page numbers.
+
+### Interactive Dashboard
+
+Modern Streamlit-based interface with real-time status updates.
+
+### Research Pipeline Visualization
+
+Displays the progress of each AI agent throughout the workflow.
+
+---
+
+# System Architecture
+
+```text
 User Query
     |
     v
@@ -82,27 +74,25 @@ PDF Generator
     |
     v
 Final Research Report
-</pre>
+```
 
-<hr>
+---
 
-<h2>AI Agent Workflow</h2>
+# Agent Workflow
 
-<h3>1. Planner Agent</h3>
+## 1. Planner Agent
 
-<p>
-Responsible for converting a user topic into a structured research plan.
-</p>
+The Planner Agent analyzes the user topic and creates a structured research framework.
 
-<p><strong>Example Input:</strong></p>
+### Example Input
 
-<pre>
+```text
 Analyze Electric Vehicle Market in India
-</pre>
+```
 
-<p><strong>Example Output:</strong></p>
+### Example Output
 
-<pre>
+```text
 1. Market Overview
 2. Key Players
 3. Government Policies
@@ -111,142 +101,134 @@ Analyze Electric Vehicle Market in India
 6. Supply Chain Analysis
 7. Challenges
 8. Future Outlook
-</pre>
+```
 
-<hr>
+### Responsibilities
 
-<h3>2. Search Agent</h3>
+* Understand research intent
+* Create logical report structure
+* Break complex topics into research sections
+* Generate research roadmap
 
-<p>
-Uses Tavily Search to gather relevant information from trusted online sources.
-</p>
+---
 
-<p><strong>Responsibilities:</strong></p>
+## 2. Search Agent
 
-<ul>
-    <li>Search multiple sources</li>
-    <li>Retrieve relevant content</li>
-    <li>Collect source URLs</li>
-    <li>Prepare research data for verification</li>
-</ul>
+The Search Agent uses Tavily Search to gather information from trusted web sources.
 
-<hr>
+### Responsibilities
 
-<h3>3. Fact Check Agent</h3>
+* Search relevant sources
+* Retrieve research content
+* Collect source URLs
+* Gather supporting evidence
 
-<p>
-Analyzes research findings and validates the quality of information.
-</p>
+### Output
 
-<p><strong>Responsibilities:</strong></p>
+```json
+{
+  "section": "Market Overview",
+  "results": [...]
+}
+```
 
-<ul>
-    <li>Remove weak claims</li>
-    <li>Identify key insights</li>
-    <li>Extract important statistics</li>
-    <li>Assign confidence scores</li>
-</ul>
+---
 
-<p><strong>Confidence Levels:</strong></p>
+## 3. Fact Check Agent
 
-<ul>
-    <li>High</li>
-    <li>Medium</li>
-    <li>Low</li>
-</ul>
+The Fact Check Agent validates collected information and improves report reliability.
 
-<hr>
+### Responsibilities
 
-<h3>4. Report Writer Agent</h3>
+* Remove weak claims
+* Validate research quality
+* Extract key insights
+* Identify important statistics
+* Assign confidence scores
 
-<p>
-Generates a professional consulting-style research report.
-</p>
+### Confidence Levels
 
-<p>
-The report follows a structured format inspired by leading consulting firms.
-</p>
+* High
+* Medium
+* Low
 
-<p><strong>Report Sections:</strong></p>
+### Example Output
 
-<ul>
-    <li>Executive Summary</li>
-    <li>Industry Overview</li>
-    <li>Market Analysis</li>
-    <li>Competitive Landscape</li>
-    <li>Technology & Innovation</li>
-    <li>Regulatory Environment</li>
-    <li>Challenges & Risks</li>
-    <li>Opportunities</li>
-    <li>Future Outlook</li>
-    <li>Strategic Recommendations</li>
-    <li>Conclusion</li>
-</ul>
+```json
+{
+  "section": "Market Overview",
+  "summary": "...",
+  "key_statistics": [
+    "...",
+    "..."
+  ],
+  "confidence": "High"
+}
+```
 
-<hr>
+---
 
-<h3>5. PDF Generator</h3>
+## 4. Report Writer Agent
 
-<p>
-Converts the final report into a professional PDF document.
-</p>
+The Report Writer Agent transforms verified research into a professional consulting-style report.
 
-<p><strong>PDF Features:</strong></p>
+### Report Sections
 
-<ul>
-    <li>Cover Page</li>
-    <li>Report Title</li>
-    <li>Generation Date</li>
-    <li>Table of Contents</li>
-    <li>Structured Headings</li>
-    <li>Page Numbers</li>
-    <li>Professional Formatting</li>
-</ul>
+* Executive Summary
+* Industry Overview
+* Market Analysis
+* Competitive Landscape
+* Technology & Innovation
+* Regulatory Environment
+* Challenges & Risks
+* Opportunities
+* Future Outlook
+* Strategic Recommendations
+* Conclusion
 
-<hr>
+### Report Characteristics
 
-<h2>Technology Stack</h2>
+* Executive-level language
+* Data-driven insights
+* Structured formatting
+* Professional recommendations
+* Industry analysis
 
-<table border="1" cellpadding="10">
-    <tr>
-        <th>Category</th>
-        <th>Technology</th>
-    </tr>
-    <tr>
-        <td>Frontend</td>
-        <td>Streamlit</td>
-    </tr>
-    <tr>
-        <td>LLM</td>
-        <td>Google Gemini 2.5 Flash</td>
-    </tr>
-    <tr>
-        <td>Framework</td>
-        <td>LangChain</td>
-    </tr>
-    <tr>
-        <td>Search Engine</td>
-        <td>Tavily Search API</td>
-    </tr>
-    <tr>
-        <td>PDF Generation</td>
-        <td>ReportLab</td>
-    </tr>
-    <tr>
-        <td>Programming Language</td>
-        <td>Python</td>
-    </tr>
-    <tr>
-        <td>Environment Management</td>
-        <td>Python Dotenv</td>
-    </tr>
-</table>
+---
 
-<hr>
+## 5. PDF Generator
 
-<h2>Project Structure</h2>
+The PDF Generator converts the final report into a professional PDF document.
 
-<pre>
+### PDF Features
+
+* Cover Page
+* Dynamic Report Title
+* Generation Date
+* Table of Contents
+* Structured Sections
+* Page Numbers
+* Professional Formatting
+
+---
+
+# Technology Stack
+
+| Category               | Technology              |
+| ---------------------- | ----------------------- |
+| Frontend               | Streamlit               |
+| LLM                    | Google Gemini 2.5 Flash |
+| Framework              | LangChain               |
+| Search Engine          | Tavily Search API       |
+| PDF Generation         | ReportLab               |
+| Programming Language   | Python                  |
+| Environment Management | Python Dotenv           |
+
+---
+
+# Project Structure
+
+```text
 research-agent/
 │
 ├── app/
@@ -266,130 +248,210 @@ research-agent/
 ├── streamlit_app.py
 ├── requirements.txt
 ├── .env
-├── README.html
+├── README.md
 └── .gitignore
-</pre>
+```
 
-<hr>
+---
 
-<h2>Installation</h2>
+# Installation
 
-<h3>Clone Repository</h3>
+## Clone Repository
 
-<pre>
+```bash
 git clone https://github.com/yourusername/autonomous-research-analyst.git
 
 cd autonomous-research-analyst
-</pre>
+```
 
-<h3>Create Virtual Environment</h3>
+## Create Virtual Environment
 
-<pre>
+```bash
 python -m venv venv
-</pre>
+```
 
-<h3>Activate Environment</h3>
+## Activate Environment
 
-<pre>
+### Windows
+
+```bash
 venv\Scripts\activate
-</pre>
+```
 
-<h3>Install Dependencies</h3>
+### Mac/Linux
 
-<pre>
+```bash
+source venv/bin/activate
+```
+
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
-</pre>
+```
 
-<hr>
+---
 
-<h2>Environment Variables</h2>
+# Environment Variables
 
-<p>Create a <strong>.env</strong> file in the root directory:</p>
+Create a `.env` file in the project root:
 
-<pre>
+```env
 GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
 
 TAVILY_API_KEY=YOUR_TAVILY_API_KEY
-</pre>
+```
 
-<hr>
+---
 
-<h2>Running the Application</h2>
+# Running the Application
 
-<pre>
+```bash
 streamlit run streamlit_app.py
-</pre>
+```
 
-<hr>
+The application will launch locally in your browser.
 
-<h2>Sample Research Topics</h2>
+---
 
-<ul>
-    <li>Analyze Electric Vehicle Market in India</li>
-    <li>Future of Agentic AI in Healthcare</li>
-    <li>Global Semiconductor Industry Outlook</li>
-    <li>Impact of Generative AI on Customer Service</li>
-    <li>Cloud Computing Market Trends 2030</li>
-    <li>Indian FinTech Industry Analysis</li>
-    <li>Future of Autonomous Vehicles</li>
-</ul>
+# Sample Research Topics
 
-<hr>
+### Market Research
 
-<h2>Potential Future Enhancements</h2>
+* Analyze Electric Vehicle Market in India
+* Global Semiconductor Industry Outlook
+* Indian FinTech Industry Analysis
+* Future of Renewable Energy Market
 
-<ul>
-    <li>LangGraph Workflow Integration</li>
-    <li>Multi-Agent Orchestration</li>
-    <li>Citation Agent</li>
-    <li>Memory Layer</li>
-    <li>Research Chat Interface</li>
-    <li>Interactive Charts & Graphs</li>
-    <li>DOCX Export</li>
-    <li>PowerPoint Export</li>
-    <li>RAG-based Knowledge Retrieval</li>
-    <li>Research History Dashboard</li>
-</ul>
+### Technology Research
 
-<hr>
+* Future of Agentic AI in Healthcare
+* Impact of Generative AI on Customer Service
+* Future of Autonomous Vehicles
+* Enterprise Adoption of AI Agents
 
-<h2>Learning Outcomes</h2>
+### Business Research
 
-<p>
+* Cloud Computing Market Trends 2030
+* Digital Transformation in Banking
+* Future of E-commerce in India
+* Telecom Industry Outlook
+
+---
+
+# Business Value
+
+This platform significantly reduces the time required for research and report generation.
+
+### Traditional Research Process
+
+* Manual research
+* Source validation
+* Note preparation
+* Report writing
+* Formatting
+
+Time Required:
+**4–8 Hours**
+
+### Autonomous Research Analyst
+
+* Automated planning
+* Automated research
+* Automated verification
+* Automated report generation
+* Automated PDF export
+
+Time Required:
+**3–10 Minutes**
+
+---
+
+# Learning Outcomes
+
 This project demonstrates practical experience with:
-</p>
 
-<ul>
-    <li>Agentic AI Systems</li>
-    <li>Multi-Agent Workflows</li>
-    <li>LLM Application Development</li>
-    <li>Prompt Engineering</li>
-    <li>Tool Calling</li>
-    <li>Information Retrieval</li>
-    <li>Fact Verification Pipelines</li>
-    <li>Report Generation Systems</li>
-    <li>Python Backend Development</li>
-    <li>AI Product Engineering</li>
-</ul>
+* Agentic AI Systems
+* Multi-Agent Workflows
+* Large Language Models (LLMs)
+* Prompt Engineering
+* Tool Calling
+* Information Retrieval
+* Fact Verification Pipelines
+* Research Automation
+* PDF Generation
+* Python Backend Development
+* AI Product Engineering
+* End-to-End AI Application Development
 
-<hr>
+---
 
-<h2>Author</h2>
+# Future Enhancements
 
-<p>
-<strong>Abhi</strong><br>
-B.Tech Computer Science Engineering<br>
-SRM Institute of Science and Technology (SRMIST)<br>
-AI Engineering | Agentic AI | Generative AI
-</p>
+### Version 2.0
 
-<hr>
+* LangGraph Integration
+* Multi-Agent Orchestration
+* Citation Agent
+* Memory Layer
+* Research Chat Interface
+* Interactive Data Visualizations
+* DOCX Export
+* PowerPoint Export
+* RAG-based Knowledge Retrieval
+* Research History Dashboard
 
-<h2>License</h2>
+### Enterprise Features
 
-<p>
-This project is intended for educational, research, and portfolio purposes.
-</p>
+* User Authentication
+* Report Management
+* Team Collaboration
+* Custom Templates
+* API Access
+* Knowledge Base Integration
 
-</body>
-</html>
+---
+
+# Portfolio Highlights
+
+This project showcases skills relevant to:
+
+* AI Engineer
+* Generative AI Engineer
+* Agentic AI Developer
+* Applied AI Engineer
+* Machine Learning Engineer
+* Research Automation Engineer
+* AI Product Engineer
+
+Key concepts demonstrated:
+
+* Multi-Agent AI Systems
+* LLM Orchestration
+* Tool Integration
+* Autonomous Workflows
+* Research Automation
+* Professional Report Generation
+
+---
+
+# Author
+
+**Ayush**
+
+B.Tech Computer Science Engineering
+SRM Institute of Science and Technology (SRMIST)
+
+Areas of Interest:
+
+* Agentic AI
+* Generative AI
+* AI Engineering
+* Automation
+* Intelligent Systems
+
+---
+
+# License
+
+This project is intended for educational, research, learning, and portfolio purposes.
