@@ -9,6 +9,18 @@
 
 <h1>Autonomous Research Analyst</h1>
 
+<p align="center">
+    <a href="https://research-ai-2rar.onrender.com" target="_blank">
+        <img src="https://img.shields.io/badge/Live%20Demo-View%20Application-success?style=for-the-badge&logo=render" alt="Live Demo">
+    </a>
+</p>
+
+<p align="center">
+    <a href="https://research-ai-2rar.onrender.com" target="_blank">
+        <strong>Live Application →</strong>
+    </a>
+</p>
+
 <p>
 An AI-powered multi-agent research platform that autonomously conducts market research,
 validates information, generates executive-level reports, and exports professional PDF documents.
