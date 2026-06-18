@@ -377,7 +377,7 @@ This project demonstrates practical experience with:
 <h2>Author</h2>
 
 <p>
-<strong>Abhi</strong><br>
+<strong>Ayush Saxena</strong><br>
 B.Tech Computer Science Engineering<br>
 SRM Institute of Science and Technology (SRMIST)<br>
 AI Engineering | Agentic AI | Generative AI
